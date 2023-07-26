@@ -1,0 +1,41 @@
+@startuml
+class Reserva{
+- codigo: int
+- rota: Rota
+- quantidadePessoas: int
++ Reserva(codigo: int, rota: Rota, quantidadePessoas: int)
++ calcularPreco(): double
+}
+
+class Rota{
+- estacaoPartida: Estacao
+- estacaoDestino: Estacao
++ Rota(estacaoPartida: Estacao, estacaoDestino: Estacao)
++ getEstacaoPartida(): Estacao
++ getEstacaoDestino: Estacao
+}
+
+class Estacao{
+- nome: String
++ Estacao(nome: String)
++ getNome(): String
+}
+
+class Trem {
+- reservas: List<Reserva>
+- estacoes: List<Estacao>
++ Trem(estacoes: List<Estacao>)
++ adicionarReserva(reserva: Reserva)
++ removerReserva(reserva: Reserva)
++ valorTotal(): double
++ quantVezesVisitada(estacao: Estacao): int
+}
+Reserva --[hidden]> Trem
+Reserva --[hidden]> Estacao
+Reserva --[hidden]> Rota
+
+Reserva "1" -- "1" Rota
+Rota "1" -- "1" Estacao
+Trem "1" -- "0..*" Reserva
+Trem "1" -- "0..*" Estacao
+@enduml

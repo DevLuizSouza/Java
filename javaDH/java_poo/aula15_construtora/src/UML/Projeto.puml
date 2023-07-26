@@ -1,0 +1,39 @@
+@startuml
+
+class Projeto {
+  - numero: int
+  - nome: String
+  - cidade: String
+  - status: String
+  - endereco: String
+  - dataInicio: LocalDate
+  - dataTerminoPrevista: LocalDate
+  - dataTerminoReal: LocalDate
+  + Projeto(numero: int, nome: String, cidade: String, status: String, endereco: String, dataInicio: String, dataTerminoPrevista: String, dataTerminoReal: String)
+  + terminouNaData(): boolean
+}
+
+abstract class ProjetoHabitacional {
+  - tamanhoTerreno: double
+  - numeroBanheiros: int
+  - numeroQuartos: int
+  + ProjetoHabitacional(numero: int, nome: String, cidade: String, status: String, endereco: String, dataInicio: String, dataTerminoPrevista: String, dataTerminoReal: String, tamanhoTerreno: double, numeroBanheiros: int, numeroQuartos: int)
+}
+
+class Casa {
+  + Casa(numero: int, nome: String, cidade: String, status: String, endereco: String, dataInicio: String, dataTerminoPrevista: String, dataTerminoReal: String, tamanhoTerreno: double, numeroBanheiros: int, numeroQuartos: int)
+}
+
+class Departamento {
+  - numeroAndares: int
+  - apartamentosPorAndar: int
+  + Departamento(numero: int, nome: String, cidade: String, status: String, endereco: String, dataInicio: String, dataTerminoPrevista: String, dataTerminoReal: String, numeroAndares: int, apartamentosPorAndar: int)
+  + compararTamanho(departamento: Departamento): int
+  + isArranhaCeu(): boolean
+}
+
+Projeto "1" -- "1" ProjetoHabitacional
+ProjetoHabitacional <|-- Casa
+ProjetoHabitacional <|-- Departamento
+
+@enduml

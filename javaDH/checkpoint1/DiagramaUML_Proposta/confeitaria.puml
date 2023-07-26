@@ -1,0 +1,91 @@
+@startuml
+
+
+
+class Confeitaria {
+  -listaProdutos: List<Produto>
+  -listaClientes: List<Cliente>
+  + Confeitaria()
+  + adicionarCliente(cliente: Cliente): void
+  + adicionarProduto(produto: Produto): void
+}
+class Pedido {
+  - cliente: Cliente
+  - produtos: List<Produto>
+  - data: LocalDate
+  + Pedido()
+}
+class Cliente {
+  - nome: String
+  - sobrenome: String
+  - cpf: String
+  - email: String
+  - ddd: int
+  - numero: long
+  - idade: LocalDate
+  - endereco: String
+  + Cliente()
+}
+class Produto {
+  nomeProduto: String
+  descricao: String
+  preco: BigDecimal
+  + Produto()
+}
+
+class PagamentoCartao{
+-nomeTitular: String
+- CPF: String
+- tipoCartao: String
+- bandeira: String
+- numeroCartao: String
+-codigoSeguranca: String
+- dataValidade: LocalDate
+}
+
+
+
+class Pagamento{
+- valor: BigDecimal
+- id: Integer
+- versao: integer
++ Pagamento()
++ fazerPagamento(): void
+}
+
+class PagamentoCartao{
+-nomeTitular: String
+- CPF: String
+- tipoCartao: String
+- bandeira: String
+- numeroCartao: String
+-codigoSeguranca: String
+- dataValidade: LocalDate
++ PagamentoCartao()
+}
+
+class PagamentoPix{
+- tipoChave: String
+- chave: String
+- Pagamento: valor
++ PagamentoPix()
+}
+
+class StatusPagamento <<enumaration>>{
+PROCESSANDO
+CANCELADO
+RECEBIDO
+
+}
+
+
+Confeitaria "1" -- "n" Pedido
+Pedido "1" -- "n" Produto
+Pedido "1" -- "1" Cliente
+Pedido "0" -- "1" Pagamento
+Pagamento -- StatusPagamento
+Pagamento <|-- PagamentoCartao
+Pagamento <|-- PagamentoPix
+
+
+@enduml

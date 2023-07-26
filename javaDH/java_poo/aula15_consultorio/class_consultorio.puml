@@ -1,0 +1,39 @@
+@startuml
+
+class Consulta{
+- especialidade: String
+- dataConsulta: LocalDate
+- horaConsulta: LocalDateTime
+-- Methods --
++   Consulta(String especialidade, LocalDate dataConsulta, LocalDateTime horaConsulta)
++ avaliarPaciente(): void;
+
+}
+
+class Paciente{
+- nome:String;
+- sobrenome: String
+- dataNascimento: LocalDate
+- primeiraConsulta: boolean
+-- Methods --
++   Paciente(String nome, String sobrenome, LocalDate dataNascimento, boolean primeiraConsulta)
++  abstract compararConsulta()
+}
+
+
+
+class PacienteParticular{
+- valorConsulta: BigDecimal
+- numeroRg: Integer
+}
+
+class PacientePublico{
+- numeroCartaoSus: Integer
+-- Methods --
++compararConsulta(): boolean
+}
+Consulta "1" --> "1" Paciente
+
+Paciente ^-- PacienteParticular
+Paciente  ^-- PacientePublico
+@enduml

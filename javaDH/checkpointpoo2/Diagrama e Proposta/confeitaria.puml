@@ -1,0 +1,91 @@
+@startuml
+skinparam groupInheritance 2
+skinparam classHeaderBackgroundColor #9
+
+
+
+
+class Pedido #palegreen ##[bold]green{
+  - cliente: Cliente
+  - produtos: List<Produto>
+  - data: LocalDate
+  + Pedido(cliente: Cliente, produtos: List<Produto>, \n data: LocalDate)
+  + incluirProduto(): void
+  + consultarProdutos(): void
+  + alterarProduto(): void
+  + excluirProduto(): void
+  + realizarPedido(): void
+  + manterProdutos(): void
+}
+
+class Cliente #aliceblue ##[bold]blue{
+  - nome: String
+  - sobrenome: String
+  - cpf: String
+  - email: String
+  - ddd: int
+  - numero: long
+  - idade: LocalDate
+  - endereco: String
+  - listaClientes: List<Cliente>
+  + Cliente(nome: String, sobrenome: String, cpf: String, \n email: String, ddd: int,  numero: long, idade: LocalDate, endereco: String)
+  + consultarClientes(): void
+  + incluirCliente(): void
+  + deletarCliente(): void
+  + alterarCliente(): void
+  + manterCliente(cliente: Cliente): void
+}
+
+class Produto #line:green;back:lightblue {
+  - nomeProduto: String
+  - descricao: String
+  - preco: BigDecimal
+  - listaProdutos: List<Produto>
+  + Produto(nomeProduto: String, descricao: \n String, preco: BigDecimal)
+  + manterProduto(produto: Produto): Void
+}
+
+
+class Pagamento #line:green;back:cadetblue{
+- valor: BigDecimal
+- id: Integer
+- versao: integer
++ Pagamento(valor: BigDecimal, \n id: Integer, versao: integer)
++ dadosPagamento(): void
+}
+
+class PagamentoCartao{
+-nomeTitular: String
+- CPF: String
+- tipoCartao: String
+- bandeira: String
+- numeroCartao: String
+-codigoSeguranca: String
+- dataValidade: LocalDate
++ PagamentoCartao(nomeTitular: String, CPF: String, \n tipoCartao: String, bandeira: String, numeroCartao: String,\n codigoSeguranca: String, dataValidade: LocalDate)
++ static processarPagamento(): void
+}
+
+class PagamentoPix{
+- tipoChave: String
+- chave: String
+- Pagamento: valor
++ PagamentoPix(tipoChave: String, \n chave: String,  Pagamento: valor)
++ static processarPagamento(): void
+}
+
+
+
+
+
+Pedido "1" -left- "n" Produto
+Pedido "n" -right- "1" Cliente
+Pedido "1" -- "1" Pagamento
+Pagamento <|-down- PagamentoCartao
+Pagamento <|-down- PagamentoPix
+
+
+
+
+
+@enduml

@@ -1,0 +1,7 @@
+
+
+java:S4165"bRemove this useless assignment; "nome" already holds the assigned value along all execution paths.(÷®ƒ¥8ˆÉÔÕ˜1
+U
+java:S1854"8Remove this useless assignment to local variable "nome".(÷®ƒ¥8ÉÔÕ˜1
+L
+java:S1656"/Remove or correct this useless self-assignment.(÷®ƒ¥8ÉÔÕ˜1
