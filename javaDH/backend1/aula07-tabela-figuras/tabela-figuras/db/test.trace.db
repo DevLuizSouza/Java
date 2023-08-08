@@ -1,0 +1,24 @@
+2023-08-07 20:59:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo') [42000-220]
+2023-08-07 21:01:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo') [42000-220]
+2023-08-07 21:01:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo') [42000-220]
+2023-08-07 21:05:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras values('uuuid_1, 'Círculo', 'Amarelo') [42000-220]
+2023-08-07 21:06:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras values('uuid_1, 'Círculo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras values('uuid_1, 'Círculo', 'Amarelo') [42000-220]
+2023-08-07 21:08:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras values('uuid_1, 'Circulo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras values('uuid_1, 'Circulo', 'Amarelo') [42000-220]
+2023-08-07 21:19:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras values('uuid_1, 'Circulo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras values('uuid_1, 'Circulo', 'Amarelo') [42000-220]
+2023-08-07 21:38:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO Figuras VALUES('uuid_1, 'Circulo', 'Amarelo[*]')"; SQL statement:
+INSERT INTO Figuras VALUES('uuid_1, 'Circulo', 'Amarelo') [42000-220]
