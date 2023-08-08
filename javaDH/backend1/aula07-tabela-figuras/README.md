@@ -31,8 +31,8 @@ Este projeto tem o objetivo de criar uma tabela no banco de dados para armazenar
 
 ## Metadados 📊
 
-- Autor: Seu Nome
-- Data de Criação: Data de Criação
+- Autor: Luiz de Souza 
+- Data de Criação: 07/08/2023
 - Última Atualização: Data da Última Atualização
 
 ## Observações 🧐
